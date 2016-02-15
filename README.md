@@ -2,6 +2,45 @@
 
 Created by Microsoft Corporation, 2014. Provided As-is without warranty. Trademarks mentioned here are the property of their owners.
 
+### API functionality demonstrated in this sample
+
+The following aspects of the API are covered in this sample. 
+
+* [Obtain an access token using Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure)
+* [GET all your existing class notebooks](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#create)
+* [POST a new class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#get)
+* [POST a new student to an existing class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#add)
+* [POST a new co-teacher to an existing class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#add)
+* [DELETE an existing student from an existing class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#delete)
+* [DELETE an existing co-teacher from an existing class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#delete)
+
+### Prerequisites
+
+* [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure)  
+* [An Office 365 account with OneDrive set up](https://portal.office.com)
+* Four additional Office 365 accounts - this sample script creates a class notebook then adds students and co-teachers to that class notebook. As such, it needs some Office 365 accounts to play the role of students and co-teachers.
+
+### Using the sample
+
+1. Obtain a client ID as described under [Authenticate using Azure AD (enterprise apps)](https://msdnstage.redmond.corp.microsoft.com/office/office365/howto/onenote-auth#aad-auth). As part of this process, you will also figure out your redirect URI and Azure AD tenant. 
+2. Download this repo as a ZIP file to your local computer, and extract the files. Or, clone the repository into a local copy of Git.
+3. Edit OneNoteClassNotebooksApiSample.ps1. Find and replace the following tokens with real values:
+
+   <AZURE_AD_TENANT_NAME> - This is your Azure tenant
+   <CLIENT_ID> - This is the client ID from step 1
+   <MY_LOGIN> - This is your Office 365 login name. You will be added as the teacher to the class notebook this script creates.
+   <COTEACHER_LOGIN> - This is the Office 365 login name for an account that will be added as a co-teacher to the class notebook this script creates.
+   <STUDENT_1_LOGIN>, <STUDENT_2_LOGIN>, <STUDENT_3_LOGIN> - These are the Office 365 login names for accounts that will be added as students to the class notebook this script creates.
+
+4. Once all the placeholder above have been replaced with real values, simply execute the script. 
+5. Once the script has successfully executed, go to your OneDrive. You will see a folder named "Class Notebooks". In it you will find a "Math 101" class notebook created by this script.
+
+### Next steps
+
+This sample demonstrated creating class notebooks in your personal OneDrive. However, if you are an IT administrator and have write access to the OneDrive accounts of your teachers, you can also programmatically create class notebooks for them. 
+
+Refer to the [Construct the request URI](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook) section, in particular the **Shared notebooks on OneDrive for Business** section.
+
 ### Version info
 
 This is the initial public release for this code sample.
