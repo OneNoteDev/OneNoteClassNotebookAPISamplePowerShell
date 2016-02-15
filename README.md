@@ -6,7 +6,7 @@ Created by Microsoft Corporation, 2016. Provided as-is without warranty. Tradema
 
 The following aspects of the API are covered in this sample. 
 
-* [Obtain an access token using Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure)
+* Obtain an access token using Azure PowerShell
 * [GET all your existing class notebooks](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#get)
 * [POST a new class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#create)
 * [POST a new student to an existing class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#add)
