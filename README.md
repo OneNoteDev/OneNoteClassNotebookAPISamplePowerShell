@@ -1,14 +1,14 @@
 ## OneNote Class Notebooks API PowerShell Sample README
 
-Created by Microsoft Corporation, 2014. Provided As-is without warranty. Trademarks mentioned here are the property of their owners.
+Created by Microsoft Corporation, 2016. Provided as-is without warranty. Trademarks mentioned here are the property of their owners.
 
 ### API functionality demonstrated in this sample
 
 The following aspects of the API are covered in this sample. 
 
 * [Obtain an access token using Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure)
-* [GET all your existing class notebooks](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#create)
-* [POST a new class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#get)
+* [GET all your existing class notebooks](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#get)
+* [POST a new class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#create)
 * [POST a new student to an existing class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#add)
 * [POST a new co-teacher to an existing class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#add)
 * [DELETE an existing student from an existing class notebook](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook#delete)
@@ -17,16 +17,16 @@ The following aspects of the API are covered in this sample.
 ### Prerequisites
 
 * [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure) - used to obtain an access token to talk to the OneNote Class Notebooks API.
-* [An Office 365 account with OneDrive set up](https://portal.office.com) - this sample script will create a class notebook in your OneDrive.
-* Four additional Office 365 accounts - this sample script will add students and co-teachers to the class notebook it creates using these accounts.
+* [An Office 365 account with OneDrive set up](https://portal.office.com) - the class notebook that this sample script creates will be located in your OneDrive. To ensure that your OneDrive is set up, log on to [Office 365](https://portal.office.com) and click the blue "OneDrive" icon in the app launcher. If you are taken to your OneDrive, you are all set.
+* Four additional Office 365 accounts - this sample script will add students and co-teachers to the class notebook it creates using these accounts. 
 
 ### Using the sample
 
-1. Obtain a client ID as described under [Authenticate using Azure AD (enterprise apps)](https://msdnstage.redmond.corp.microsoft.com/office/office365/howto/onenote-auth#aad-auth). As part of this process, you will also figure out your redirect URI and Azure AD tenant. 
+1. Obtain a client ID as described under [Authenticate using Azure AD (enterprise apps)](https://msdnstage.redmond.corp.microsoft.com/office/office365/howto/onenote-auth#aad-auth). As part of this process, you will also figure out your redirect URI and Azure AD tenant which will be needed later.
 2. Download this repo as a ZIP file to your local computer, and extract the files. Or, clone the repository into a local copy of Git.
 3. Edit OneNoteClassNotebooksApiSample.ps1. Find and replace the following tokens with real values:
-   * &lt;AZURE_AD_TENANT_NAME&gt; - This is your Azure tenant
-   * &lt;CLIENT_ID&gt; - This is the client ID from step 1
+   * &lt;AZURE_AD_TENANT_NAME&gt; - This is your Azure tenant. E.g. "contoso.com"
+   * &lt;CLIENT_ID&gt; - This is the client ID obtained from step 1 above.
    * &lt;MY_LOGIN&gt; - This is your Office 365 login name. You will be added as the teacher to the class notebook this script creates.
    * &lt;COTEACHER_LOGIN&gt; - This is the Office 365 login name for an account that will be added as a co-teacher to the class notebook this script creates.
    * &lt;STUDENT_1_LOGIN&gt;, &lt;STUDENT_2_LOGIN&gt;, &lt;STUDENT_3_LOGIN&gt; - These are the Office 365 login names for accounts that will be added as students to the class notebook this script creates.
