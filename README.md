@@ -25,12 +25,11 @@ The following aspects of the API are covered in this sample.
 1. Obtain a client ID as described under [Authenticate using Azure AD (enterprise apps)](https://msdnstage.redmond.corp.microsoft.com/office/office365/howto/onenote-auth#aad-auth). As part of this process, you will also figure out your redirect URI and Azure AD tenant. 
 2. Download this repo as a ZIP file to your local computer, and extract the files. Or, clone the repository into a local copy of Git.
 3. Edit OneNoteClassNotebooksApiSample.ps1. Find and replace the following tokens with real values:
-
-   &lt;AZURE_AD_TENANT_NAME&gt; - This is your Azure tenant
-   &lt;CLIENT_ID&gt; - This is the client ID from step 1
-   &lt;MY_LOGIN&gt; - This is your Office 365 login name. You will be added as the teacher to the class notebook this script creates.
-   &lt;COTEACHER_LOGIN&gt; - This is the Office 365 login name for an account that will be added as a co-teacher to the class notebook this script creates.
-   &lt;STUDENT_1_LOGIN&gt;, &lt;STUDENT_2_LOGIN&gt;, &lt;STUDENT_3_LOGIN&gt; - These are the Office 365 login names for accounts that will be added as students to the class notebook this script creates.
+   * &lt;AZURE_AD_TENANT_NAME&gt; - This is your Azure tenant
+   * &lt;CLIENT_ID&gt; - This is the client ID from step 1
+   * &lt;MY_LOGIN&gt; - This is your Office 365 login name. You will be added as the teacher to the class notebook this script creates.
+   * &lt;COTEACHER_LOGIN&gt; - This is the Office 365 login name for an account that will be added as a co-teacher to the class notebook this script creates.
+   * &lt;STUDENT_1_LOGIN&gt;, &lt;STUDENT_2_LOGIN&gt;, &lt;STUDENT_3_LOGIN&gt; - These are the Office 365 login names for accounts that will be added as students to the class notebook this script creates.
 
 4. Once all the placeholder above have been replaced with real values, simply execute the script. 
 5. Once the script has successfully executed, go to your OneDrive. You will see a folder named "Class Notebooks". In it you will find a "Math 101" class notebook created by this script.
