@@ -33,8 +33,9 @@ The following aspects of the API are covered in this sample.
 2. Download this repo as a ZIP file to your local computer, and extract the files. Or, clone the repository into a local copy of Git.
 
 3. Edit OneNoteClassNotebooksApiSample.ps1. Find and replace the following tokens with real values:
-   * &lt;AZURE_AD_TENANT_NAME&gt; - This is your Azure tenant. E.g. "contoso.com"
-   * &lt;CLIENT_ID&gt; - This is the client ID obtained from step 1 above.
+   * &lt;AZURE_AD_TENANT_NAME&gt; - This is your Azure tenant, e.g. "contoso.com".
+   * &lt;CLIENT_ID&gt; - This is the client ID of your app, e.g. "471afe29-4aee-4bc5-9aaf-468ee5bbe20a".
+   * &lt;REDIRECT_URI&gt; - This is the redirect URI of your app, e.g. "http://localhost".
    * &lt;MY_LOGIN&gt; - This is your Office 365 login name. You will be added as the teacher to the class notebook this script creates.
    * &lt;COTEACHER_LOGIN&gt; - This is the Office 365 login name for an account that will be added as a co-teacher to the class notebook this script creates.
    * &lt;STUDENT_1_LOGIN&gt;, &lt;STUDENT_2_LOGIN&gt;, &lt;STUDENT_3_LOGIN&gt; - These are the Office 365 login names for accounts that will be added as students to the class notebook this script creates.
