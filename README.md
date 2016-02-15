@@ -24,11 +24,11 @@ The following aspects of the API are covered in this sample.
 
 1. Obtain a client ID as described under [Authenticate using Azure AD (enterprise apps)](https://msdnstage.redmond.corp.microsoft.com/office/office365/howto/onenote-auth#aad-auth). When asked for a redirect URI, "http://localhost" will suffice:
 
-![Image of redirect URI](http://i.imgur.com/wfsOClm.png)
+  ![Image of redirect URI](http://i.imgur.com/wfsOClm.png)
 
-When asked for OneNote delegated permissions, check "View and modify OneNote notebooks in your organization":
+  When asked for OneNote delegated permissions, check "View and modify OneNote notebooks in your organization":
 
-![Image of permissions](http://imgur.com/GDfd0TL.png)
+  ![Image of permissions](http://imgur.com/GDfd0TL.png)
 
 2. Download this repo as a ZIP file to your local computer, and extract the files. Or, clone the repository into a local copy of Git.
 
