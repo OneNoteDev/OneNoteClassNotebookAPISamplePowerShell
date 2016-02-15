@@ -23,7 +23,9 @@ The following aspects of the API are covered in this sample.
 ### Using the sample
 
 1. Obtain a client ID as described under [Authenticate using Azure AD (enterprise apps)](https://msdnstage.redmond.corp.microsoft.com/office/office365/howto/onenote-auth#aad-auth). As part of this process, you will also figure out your redirect URI and Azure AD tenant which will be needed in step 3 below.
+
 2. Download this repo as a ZIP file to your local computer, and extract the files. Or, clone the repository into a local copy of Git.
+
 3. Edit OneNoteClassNotebooksApiSample.ps1. Find and replace the following tokens with real values:
    * &lt;AZURE_AD_TENANT_NAME&gt; - This is your Azure tenant. E.g. "contoso.com"
    * &lt;CLIENT_ID&gt; - This is the client ID obtained from step 1 above.
@@ -32,6 +34,7 @@ The following aspects of the API are covered in this sample.
    * &lt;STUDENT_1_LOGIN&gt;, &lt;STUDENT_2_LOGIN&gt;, &lt;STUDENT_3_LOGIN&gt; - These are the Office 365 login names for accounts that will be added as students to the class notebook this script creates.
 
 4. Once all the placeholders above have been replaced with real values (remember to enclose each value in double quotes), simply execute the script.
+
 5. Once the script has successfully executed, go to your OneDrive where you will see a folder named "Class Notebooks". In this folder you will find the "Math 101" class notebook this script created.
 
 ### Next steps
@@ -42,7 +45,7 @@ Refer to the [Construct the request URI](https://msdn.microsoft.com/office/offic
 ```
 	POST https://www.onenote.com/api/v1.0/users/<teacher_id>/notes/classnotebooks
 ```
-where <teacher_id> is the Office 365 login name of the teacher you wish to create a class notebook for.
+where &lt;teacher_id&gt; is the Office 365 login name of the teacher you wish to create a class notebook for.
 
 Finally, note that Office 365 does not grant IT administrators read or write access to the OneDrive of teachers by default. Before creating class notebooks for teachers, check that you have read and write access to their OneDrive. 
 
