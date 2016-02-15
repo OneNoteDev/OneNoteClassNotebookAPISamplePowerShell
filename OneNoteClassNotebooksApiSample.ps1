@@ -22,6 +22,7 @@ $student2Login = <STUDENT_2_LOGIN>
 # Test student 3's Office365 login name. E.g. "benjamin.hall@contoso.com"
 $student3Login = <STUDENT_3_LOGIN>
 
+# Load Azure AD libraries
 $adal = "${env:ProgramFiles(x86)}\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure\Services\Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
 
 $adalforms = "${env:ProgramFiles(x86)}\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure\Services\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll"
@@ -68,6 +69,7 @@ $classNotebookJson = @"
 
 $classNotebook = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $classNotebookJson
 
+# Save the ID of the newly created class notebook
 $classNotebookId = $classNotebook.id
 
 # Add a student to newly created class notebook
@@ -80,6 +82,7 @@ $studentJson = @"
 
 $student = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $studentJson
 
+# Save the ID of the newly added student
 $studentId = $student.id;
 
 # Add a teacher to newly created class notebook
@@ -92,6 +95,7 @@ $teacherJson = @"
 
 $teacher = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/teachers -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $teacherJson
 
+# Save the ID of the newly added teacher
 $teacherId = $teacher.id;
 
 # Remove a student from newly created class notebook

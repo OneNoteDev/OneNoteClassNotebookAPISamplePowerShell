@@ -16,9 +16,9 @@ The following aspects of the API are covered in this sample.
 
 ### Prerequisites
 
-* [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure)  
-* [An Office 365 account with OneDrive set up](https://portal.office.com)
-* Four additional Office 365 accounts - this sample script creates a class notebook then adds students and co-teachers to that class notebook. As such, it needs some Office 365 accounts to play the role of students and co-teachers.
+* [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure) - used to obtain an access token to talk to the OneNote Class Notebooks API.
+* [An Office 365 account with OneDrive set up](https://portal.office.com) - this sample script will create a class notebook in your OneDrive.
+* Four additional Office 365 accounts - this sample script will add students and co-teachers to the class notebook it creates using these accounts.
 
 ### Using the sample
 
@@ -26,11 +26,11 @@ The following aspects of the API are covered in this sample.
 2. Download this repo as a ZIP file to your local computer, and extract the files. Or, clone the repository into a local copy of Git.
 3. Edit OneNoteClassNotebooksApiSample.ps1. Find and replace the following tokens with real values:
 
-   <AZURE_AD_TENANT_NAME> - This is your Azure tenant
-   <CLIENT_ID> - This is the client ID from step 1
-   <MY_LOGIN> - This is your Office 365 login name. You will be added as the teacher to the class notebook this script creates.
-   <COTEACHER_LOGIN> - This is the Office 365 login name for an account that will be added as a co-teacher to the class notebook this script creates.
-   <STUDENT_1_LOGIN>, <STUDENT_2_LOGIN>, <STUDENT_3_LOGIN> - These are the Office 365 login names for accounts that will be added as students to the class notebook this script creates.
+   &lt;AZURE_AD_TENANT_NAME&gt; - This is your Azure tenant
+   &lt;CLIENT_ID&gt; - This is the client ID from step 1
+   &lt;MY_LOGIN&gt; - This is your Office 365 login name. You will be added as the teacher to the class notebook this script creates.
+   &lt;COTEACHER_LOGIN&gt; - This is the Office 365 login name for an account that will be added as a co-teacher to the class notebook this script creates.
+   &lt;STUDENT_1_LOGIN&gt;, &lt;STUDENT_2_LOGIN&gt;, &lt;STUDENT_3_LOGIN&gt; - These are the Office 365 login names for accounts that will be added as students to the class notebook this script creates.
 
 4. Once all the placeholder above have been replaced with real values, simply execute the script. 
 5. Once the script has successfully executed, go to your OneDrive. You will see a folder named "Class Notebooks". In it you will find a "Math 101" class notebook created by this script.
