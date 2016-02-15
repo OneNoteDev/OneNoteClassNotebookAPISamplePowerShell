@@ -39,19 +39,13 @@ The following aspects of the API are covered in this sample.
 
 ### Next steps
 
-This sample script demonstrated creating a class notebook in your personal OneDrive. However, if you are an IT administrator and have write access to the OneDrive accounts of your teachers, you can also programmatically create class notebooks for them. 
-
-Refer to the [Construct the request URI](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook) section, in particular the **Shared notebooks on OneDrive for Business** section:
+This sample script demonstrated creating a class notebook in your personal OneDrive. If you are an IT administrator, you can also programmatically create class notebooks for teachers. Refer to the [Construct the request URI](https://msdn.microsoft.com/office/office365/howto/onenote-classnotebook) section, in particular the **Shared notebooks on OneDrive for Business** section. Specifically, you would issue the create request to:
 ```
 	POST https://www.onenote.com/api/v1.0/users/<teacher_id>/notes/classnotebooks
 ```
 where &lt;teacher_id&gt; is the Office 365 login name of the teacher you wish to create a class notebook for.
 
-Finally, note that Office 365 does not grant IT administrators read or write access to the OneDrive of teachers by default. Before creating class notebooks for teachers, check that you have read and write access to their OneDrive. We might include a sample script for IT administrators that shows how to:
-
-  * Ensure a teacher's OneDrive is set up.
-  * Grant the IT administrator read and write access to the teacher's OneDrive.
-  * Create a class notebook on the teacher's OneDrive.
+*Note that Office 365 does not grant IT administrators access to the OneDrive of teachers by default. Before creating class notebooks for teachers, an IT administrator needs to grant themselves access to the teachers' OneDrive.*
 
 ### Version info
 
