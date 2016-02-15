@@ -46,7 +46,9 @@ $authResult = $authContext.AcquireToken($resourceAppIdURI, $clientId, $redirectU
 $accessToken = $authResult.AccessToken;
 
 # Get existing class notebooks
-$classNotebooks = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks -Method GET -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"}
+$classNotebooks = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks `
+    -Method GET `
+    -Headers @{"Authorization" = "Bearer $accessToken"}
 
 # Create a new class notebook
 $classNotebookJson = @"
@@ -67,7 +69,11 @@ $classNotebookJson = @"
 }
 "@
 
-$classNotebook = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $classNotebookJson
+$classNotebook = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks `
+    -Method POST `
+    -ContentType "application/json; charset=utf-8" `
+    -Headers @{"Authorization" = "Bearer $accessToken"} `
+    -Body $classNotebookJson
 
 # Save the ID of the newly created class notebook which will be used to construct the API request below
 $classNotebookId = $classNotebook.id
@@ -80,7 +86,11 @@ $studentJson = @"
 }
 "@
 
-$student = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $studentJson
+$student = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students `
+    -Method POST `
+    -ContentType "application/json; charset=utf-8" `
+    -Headers @{"Authorization" = "Bearer $accessToken"} `
+    -Body $studentJson
 
 # Save the ID of the newly added student which will be used to construct the API request below
 $studentId = $student.id;
@@ -93,19 +103,24 @@ $teacherJson = @"
 }
 "@
 
-$teacher = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/teachers -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $teacherJson
+$teacher = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/teachers `
+    -Method POST `
+    -ContentType "application/json; charset=utf-8" `
+    -Headers @{"Authorization" = "Bearer $accessToken"} `
+    -Body $teacherJson
 
 # Save the ID of the newly added teacher which will be used to construct the API request below
 $teacherId = $teacher.id;
 
 # Remove the newly added student from the class notebook
-Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students/$studentId -Method DELETE -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"}
+Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students/$studentId `
+    -Method DELETE `
+    -Headers @{"Authorization" = "Bearer $accessToken"}
 
 # Remove the newly added teacher from the class notebook
-Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students/$teacherId -Method DELETE -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"}
-
-
-
+Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students/$teacherId `
+    -Method DELETE `
+    -Headers @{"Authorization" = "Bearer $accessToken"}
 
 
 
