@@ -69,7 +69,7 @@ $classNotebookJson = @"
 
 $classNotebook = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $classNotebookJson
 
-# Save the ID of the newly created class notebook
+# Save the ID of the newly created class notebook which will be used to construct the API request below
 $classNotebookId = $classNotebook.id
 
 # Add a student to newly created class notebook
@@ -82,7 +82,7 @@ $studentJson = @"
 
 $student = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $studentJson
 
-# Save the ID of the newly added student
+# Save the ID of the newly added student which will be used to construct the API request below
 $studentId = $student.id;
 
 # Add a teacher to newly created class notebook
@@ -95,13 +95,13 @@ $teacherJson = @"
 
 $teacher = Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/teachers -Method POST -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"} -Body $teacherJson
 
-# Save the ID of the newly added teacher
+# Save the ID of the newly added teacher which will be used to construct the API request below
 $teacherId = $teacher.id;
 
-# Remove a student from newly created class notebook
+# Remove the newly added student from the class notebook
 Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students/$studentId -Method DELETE -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"}
 
-# Remove a teacher from newly created class notebook
+# Remove the newly added teacher from the class notebook
 Invoke-RestMethod https://www.onenote.com/api/v1.0/me/notes/classnotebooks/$classNotebookId/students/$teacherId -Method DELETE -ContentType "application/json; charset=utf-8" -Headers @{"Authorization" = "Bearer $accessToken"}
 
 
