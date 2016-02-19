@@ -22,7 +22,7 @@ The following aspects of the API are covered in this sample.
 
 ### Using the sample
 
-1. Obtain a client ID as described under [Authenticate using Azure AD (enterprise apps)](https://msdnstage.redmond.corp.microsoft.com/office/office365/howto/onenote-auth#aad-auth). When asked for a redirect URI, "http://localhost" will suffice:
+1. Obtain a client ID as described under [Authenticate using Azure AD (enterprise apps)](https://msdn.microsoft.com/office/office365/howto/onenote-auth#aad-auth). When asked for a redirect URI, "http://localhost" will suffice:
 
   ![Image of redirect URI](http://i.imgur.com/wfsOClm.png)
 
