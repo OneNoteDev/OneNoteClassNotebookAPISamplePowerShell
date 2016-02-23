@@ -26,9 +26,9 @@ The following aspects of the API are covered in this sample.
 
   ![Image of redirect URI](http://i.imgur.com/wfsOClm.png)
 
-  When asked for OneNote delegated permissions, check "View and modify OneNote notebooks in your organization":
+  When asked for OneNote delegated permissions, check the following:
 
-  ![Image of permissions](http://imgur.com/GDfd0TL.png)
+  ![Image of permissions](http://i.imgur.com/adTLghg.png)
 
 2. Download this repo as a ZIP file to your local computer, and extract the files. Or, clone the repository into a local copy of Git.
 
