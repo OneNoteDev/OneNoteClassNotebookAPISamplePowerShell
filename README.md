@@ -52,7 +52,7 @@ This sample script demonstrated creating a class notebook in your personal OneDr
 ```
 where &lt;teacher_id&gt; is the Office 365 login name of the teacher you wish to create a class notebook for.
 
-*Note that Office 365 does not grant IT administrators access to the OneDrive of teachers by default. Before creating class notebooks for teachers, an IT administrator needs to grant themselves access to the teachers' OneDrive.*
+*Note that before creating class notebooks for teachers, an IT administrator needs to ensure OneDrive is provisioned and access is granted (IT administrators do not have access to users' OneDrives by default). These [OneDrive for Business setup cmdlets] (https://github.com/OneNoteDev/OneDriveForBusiness-SetupPowerShellCmdlets) should come in handy*
 
 ### Version info
 
