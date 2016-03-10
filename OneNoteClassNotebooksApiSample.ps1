@@ -32,7 +32,7 @@ $adalforms = "${env:ProgramFiles(x86)}\Microsoft SDKs\Azure\PowerShell\ServiceMa
 [System.Reflection.Assembly]::LoadFrom($adalforms)
 
 # Set Resource URI to Azure Service Management API
-$resourceAppIdURI = "https://onenote.com"
+$resourceAppIdURI = "https://onenote.com/"
 
 # Set Authority to Azure AD Tenant
 $authority = "https://login.windows.net/$adTenant"
